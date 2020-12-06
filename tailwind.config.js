@@ -7,7 +7,6 @@ module.exports = {
       colors: {
         primary: colors.indigo,
         secondary: colors.purple,
-        accent: colors.rose,
         danger: colors.rose,
         warning: colors.amber,
         success: colors.emerald,
@@ -25,5 +24,4 @@ module.exports = {
     },
   },
   plugins: [require('tailwindcss-pixel-dimensions')],
-  purge: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
 };
