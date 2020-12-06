@@ -19,9 +19,16 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['active'],
-      borderColor: ['active'],
+      backgroundColor: ['active', 'disabled'],
+      borderColor: ['active', 'disabled'],
+      textColor: ['disabled'],
     },
   },
+  corePlugins: {
+    float: false,
+  },
   plugins: [require('tailwindcss-pixel-dimensions')],
+  purge: {
+    content: ['./public/**/*.html', './src/**/*.html', './src/**/*.ts', './src/**/*.vue'],
+  },
 };

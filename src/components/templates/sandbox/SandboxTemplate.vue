@@ -86,7 +86,7 @@
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.transparent" :isDisabled="true">{{ color }}</app-button>
+          <app-button :color="color" :type="buttonTypes.TRANSPARENT" :isDisabled="true">{{ color }}</app-button>
         </div>
       </div>
 
@@ -185,8 +185,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppButton, { ButtonTypes, Colors } from '../../../components/atoms/button/Button.vue';
-import AppInput from '../../../components/atoms/input/Input.vue';
+import AppButton from '@atoms/button/Button.vue';
+import { ButtonTypes } from '@atoms/button/button.utils';
+import { Colors } from '@components/utils';
+import AppInput from '@atoms/input/Input.vue';
 
 export default defineComponent({
   components: {

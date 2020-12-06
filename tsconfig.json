@@ -14,40 +14,18 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "/src/*"
-      ],
-      "@atoms/*": [
-        "/src/components/atoms"
-      ],
-      "@molecules/*": [
-        "/src/components/molecules"
-      ],
-      "@organisms/*": [
-        "/src/components/organisms"
-      ],
-      "@templates/*": [
-        "/src/components/templates"
-      ],
-      "@pages/*": [
-        "/src/components/pages"
-      ],
+      "@/*": ["/src/*"],
+      "@assets/*": ["/src/assets"],
+      "@router/*": ["/src/router"],
+      "@components/*": ["/src/components"],
+      "@atoms/*": ["/src/components/atoms"],
+      "@molecules/*": ["/src/components/molecules"],
+      "@organisms/*": ["/src/components/organisms"],
+      "@templates/*": ["/src/components/templates"],
+      "@pages/*": ["/src/components/pages"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "exclude": ["node_modules"]
 }
