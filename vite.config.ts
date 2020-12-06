@@ -1,5 +1,8 @@
 const pathAliasMap = {
   '@/': '/src/',
+  '@assets': '/src/assets',
+  '@router': '/src/router',
+  '@components': '/src/components',
   '@atoms/': '/src/components/atoms/',
   '@molecules/': '/src/components/molecules/',
   '@organisms/': '/src/components/organisms/',
