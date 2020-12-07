@@ -1,13 +1,15 @@
 <template>
-  <component
-    :is="tag"
-    v-bind="$attrs"
-    :disabled="disabled"
-    :class="[style]"
-    class="transition duration-300 focus:outline-none"
-  >
-    <slot />
-  </component>
+  <router-link :to="route">
+    <component
+      :is="tag"
+      v-bind="$attrs"
+      :disabled="disabled"
+      :class="[style]"
+      class="transition duration-300 focus:outline-none"
+    >
+      <slot />
+    </component>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -39,6 +41,7 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    route: String,
   },
 
   data() {
