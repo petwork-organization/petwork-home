@@ -6,7 +6,24 @@
     :class="[style]"
     class="transition duration-300 focus:outline-none"
   >
-    <slot />
+    <fa-icon
+      :icon="icon"
+      v-if="icon"
+    ></fa-icon>
+
+    <fa-icon
+      :icon="prefixIcon"
+      class="mr-2"
+      v-if="prefixIcon"
+    ></fa-icon>
+
+    <slot v-if="!icon"></slot>
+
+    <fa-icon
+      :icon="suffixIcon"
+      class="ml-2"
+      v-if="suffixIcon"
+    ></fa-icon>
   </component>
 </template>
 
@@ -31,14 +48,13 @@ export default defineComponent({
       type: String as PropType<ButtonTypes>,
       default: ButtonTypes.FILLED,
     },
-    isIcon: {
-      type: Boolean,
-      default: false,
-    },
     isDisabled: {
       type: Boolean,
       default: false,
     },
+    icon: String,
+    prefixIcon: String,
+    suffixIcon: String,
   },
 
   data() {
@@ -62,7 +78,7 @@ export default defineComponent({
   computed: {
     style(): Object {
       const designStyle = ButtonClasses[this.type][this.color];
-      const buttonStyle = this.isIcon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-lg px-4 py-1 md:px-6 md:py-2';
+      const buttonStyle = this.icon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-lg px-3 py-1 md:px-4 md:py-2';
       const baseStyle =
         this.tag === ButtonTags.LINK
           ? 'inline-flex align-middle items-center font-medium no-underline hover:underline cursor-pointer'
