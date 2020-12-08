@@ -52,7 +52,6 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    route: String,
     icon: String,
     prefixIcon: String,
     suffixIcon: String,
