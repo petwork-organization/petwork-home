@@ -2,7 +2,7 @@
   <app-navbar class='px-32'></app-navbar>
 
   <div class="flex justify-center">
-    <div class="max-w-full mt-4 px-4 sm:w-4xl">
+    <div class="max-w-full mt-8 px-4 w-full sm:max-w-4xl">
       <app-search-card></app-search-card>
     </div>
   </div>
@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import AppSearchCard from '@organisms/search-card/Searchcard.vue';
+import AppNavbar from '@organisms/navbar/Navbar.vue';
 import { defineComponent } from 'vue';
-import AppNavbar from '../../organisms/Navbar.vue';
 
 export default defineComponent({
   name: 'HomeTemplate',

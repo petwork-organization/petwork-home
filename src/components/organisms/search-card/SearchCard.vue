@@ -3,18 +3,18 @@
     <template v-slot:content>
       <div class="flex">
         <div class="flex-auto mr-5">
-          <div class="text-bold text-primary-500 mb-1">Quel animal ?</div>
-          <app-input placeholder="Quelle race d'animal ?"></app-input>
+          <div class="font-semibold text-accent-400 mb-1">Genre d'animal</div>
+          <app-input placeholder="Quelle race recherchez-vous ?"></app-input>
         </div>
 
         <div class="flex-auto ml-5">
-          <div class="text-bold text-primary-500 mb-1">Quelle région ?</div>
-          <app-input placeholder="Où habitez-vous ?"></app-input>
+          <div class="font-semibold text-accent-400 mb-1">Zone</div>
+          <app-input placeholder="Dans quelle région habitez-vous ?"></app-input>
         </div>
       </div>
 
       <div class="flex justify-center">
-        <app-button prefixIcon="search">Rechercher</app-button>
+        <app-button suffixIcon="search">Rechercher</app-button>
       </div>
     </template>
   </app-card>
