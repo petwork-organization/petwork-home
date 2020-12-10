@@ -78,7 +78,7 @@ export default defineComponent({
   computed: {
     style(): Object {
       const designStyle = ButtonClasses[this.type][this.color];
-      const buttonStyle = this.icon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-lg px-3 py-1 md:px-4 md:py-2';
+      const buttonStyle = this.icon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-xl px-3 py-1 md:px-4 md:py-1';
       const baseStyle =
         this.tag === ButtonTags.LINK
           ? 'inline-flex align-middle items-center font-medium no-underline hover:underline cursor-pointer'
