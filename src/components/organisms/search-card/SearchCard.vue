@@ -20,7 +20,7 @@
   </app-card>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import AppCard from '@molecules/card/Card.vue';
 import AppButton from '@atoms/button/Button.vue';
