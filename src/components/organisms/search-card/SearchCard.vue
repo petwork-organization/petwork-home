@@ -22,12 +22,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppCard from '@molecules/card/Card.vue';
-import AppButton from '@atoms/button/Button.vue';
-import AppInput from '@atoms/input/Input.vue';
+import AppCard from '@molecules/card/AppCard.vue';
+import AppButton from '@atoms/button/AppButton.vue';
+import AppInput from '@atoms/input/AppInput.vue';
 
 export default defineComponent({
   components: { AppCard, AppButton, AppInput },
-  name: 'app-search-card',
+  name: 'search-card',
 });
 </script>
