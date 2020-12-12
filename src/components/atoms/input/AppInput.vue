@@ -1,5 +1,8 @@
 <template>
-  <div :class="style" class="relative flex items-center px-3 mb-5 rounded-lg border-2 transition duration-300">
+  <div
+    :class="style"
+    class="relative flex items-center px-3 mb-5 rounded-lg border-2 transition duration-300"
+  >
     <div v-if="prefixIcon" class="pr-2 pointer-events-none">
       <fa-icon :icon="prefixIcon"></fa-icon>
     </div>
@@ -30,7 +33,9 @@
       <fa-icon :icon="suffixIconValue"></fa-icon>
     </div>
 
-    <div class="absolute -bottom-5 left-0 max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap text-xs">
+    <div
+      class="absolute -bottom-5 left-0 max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap text-xs"
+    >
       {{ hintText }}
     </div>
   </div>
@@ -39,7 +44,12 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { Colors } from '@components/utils';
-import { InputStates, InputClasses, InputFocusClasses, InputIcons } from './input.utils';
+import {
+  InputStates,
+  InputClasses,
+  InputFocusClasses,
+  InputIcons,
+} from './input.utils';
 
 export default defineComponent({
   name: 'app-input',
