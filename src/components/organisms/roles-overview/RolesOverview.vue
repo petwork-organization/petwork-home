@@ -5,25 +5,11 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla augue hendrerit est congue pulvinar.
     </div>
     <div class="px-5 flex space-x-36">
-      <roles-overview-card class="flex-1">
-        <template v-slot:badge>1</template>
-        <template v-slot:title>Lorem ipsum</template>
+      <roles-overview-card class="flex-1" v-for="(item, index) in breedingOverviewItems">
+        <template v-slot:badge>{{ index + 1 }}</template>
+        <template v-slot:title>{{ item.title }}</template>
         <template v-slot:content>
-          Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.
-        </template>
-      </roles-overview-card>
-      <roles-overview-card class="flex-1">
-        <template v-slot:badge>2</template>
-        <template v-slot:title>Lorem ipsum</template>
-        <template v-slot:content>
-          Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.
-        </template>
-      </roles-overview-card>
-      <roles-overview-card class="flex-1">
-        <template v-slot:badge>3</template>
-        <template v-slot:title>Lorem ipsum</template>
-        <template v-slot:content>
-          Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.
+          {{ item.content }}
         </template>
       </roles-overview-card>
     </div>
@@ -37,5 +23,24 @@ import RolesOverviewCard from './RolesOverviewCard.vue';
 export default defineComponent({
   name: 'roles-overview',
   components: { RolesOverviewCard },
+
+  data() {
+    return {
+      breedingOverviewItems: [
+        {
+          title: 'Lorem ipsum',
+          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+        },
+        {
+          title: 'Lorem ipsum',
+          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+        },
+        {
+          title: 'Lorem ipsum',
+          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+        },
+      ],
+    };
+  },
 });
 </script>
