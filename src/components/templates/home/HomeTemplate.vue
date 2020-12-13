@@ -1,14 +1,18 @@
 <template>
-  <the-navbar class="px-32"></the-navbar>
+  <div class='h-full'>
+    <the-navbar></the-navbar>
 
-  <div class="flex justify-center">
-    <div class="max-w-full mt-8 px-4 w-full sm:max-w-4xl">
-      <search-card></search-card>
+    <div class='pt-70px'></div>
+
+    <div class="flex justify-center">
+      <div class="max-w-full mt-8 px-4 w-full sm:max-w-4xl">
+        <search-card></search-card>
+      </div>
     </div>
-  </div>
 
-  <div class="px-32 my-12">
-    <roles-overview></roles-overview>
+    <div class="w-full my-12">
+      <roles-overview></roles-overview>
+    </div>
   </div>
 </template>
 
