@@ -28,7 +28,7 @@ export const ButtonClasses = {
     [Colors.DARK]:
       'border-gray-500 bg-gray-500 hover:bg-gray-600 hover:border-gray-600 active:bg-gray-700 active:border-gray-700 disabled:border-gray-200 disabled:bg-gray-200 text-white',
     [Colors.LIGHT]:
-      'border-white bg-white hover:bg-gray-50 hover:border-gray-50 active:bg-gray-100 active:border-gray-100 disabled:border-white disabled:bg-white text-gray-600',
+      'border-white bg-white hover:bg-gray-50 hover:border-gray-50 active:bg-gray-100 active:border-gray-100 disabled:border-white disabled:bg-white text-gray-600 disabled:text-gray-200',
   },
   [ButtonTypes.TRANSPARENT]: {
     [Colors.PRIMARY]:

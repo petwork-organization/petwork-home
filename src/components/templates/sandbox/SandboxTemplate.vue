@@ -100,29 +100,29 @@
 
   <div class="px-4 py-4 my-6 md:px-24 bg-gradient-to-tr from-secondary-500 to-primary-500 text-white">
     <div class="mt-4">
-      <h2 class="font-bold text-xl ml-2">Monochrome</h2>
+      <h2 class="font-bold text-xl ml-2">Filled monochrome</h2>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.FILLED_MONOCHROME">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME" :isDisabled="true">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.FILLED_MONOCHROME" :isDisabled="true">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME" icon="home"></app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.FILLED_MONOCHROME" icon="home"></app-button>
         </div>
       </div>
     </div>
 
     <div class="mt-4">
-      <h2 class="font-bold text-xl ml-2">Light</h2>
+      <h2 class="font-bold text-xl ml-2">Light variants</h2>
 
       <div class="flex">
         <div class="m-2" v-for="type in buttonTypes" v-bind:key="type">
