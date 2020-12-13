@@ -1,13 +1,13 @@
 <template>
   <app-card>
     <template v-slot:content>
-      <div class="flex flex-col justify-center items-center py-4 space-y-6">
-        <div class="flex rounded-full h-24 w-24 justify-center items-center bg-primary-500">
-          <div class="text-4xl text-white">
+      <div class="flex flex-col justify-center items-center py-4">
+        <div class="flex rounded-full h-50px w-50px justify-center items-center bg-gradient-to-tr from-primary-500 to-secondary-400">
+          <div class="text-3xl text-white">
             <slot name="badge"></slot>
           </div>
         </div>
-        <div class="text-accent-400 font-semibold">
+        <div class="text-accent-400 mt-4 font-semibold">
           <slot name="title"></slot>
         </div>
       </div>

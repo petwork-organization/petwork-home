@@ -28,6 +28,15 @@ module.exports = {
       zIndex: {
         '-10': '-10',
       },
+      animation: {
+        'slide-down': 'slideDown .3s forwards',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        }
+      },
     },
   },
   variants: {
