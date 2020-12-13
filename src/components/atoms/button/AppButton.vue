@@ -4,7 +4,7 @@
     v-bind="$attrs"
     :disabled="disabled"
     :class="[style]"
-    class="transition duration-300 focus:outline-none"
+    class="transition duration-300 focus:outline-none flex items-center justify-center"
   >
     <fa-icon
       :icon="icon"
@@ -13,7 +13,7 @@
 
     <fa-icon
       :icon="prefixIcon"
-      class="mr-2"
+      class="mr-3"
       v-if="prefixIcon"
     ></fa-icon>
 
@@ -21,7 +21,7 @@
 
     <fa-icon
       :icon="suffixIcon"
-      class="ml-2"
+      class="ml-3"
       v-if="suffixIcon"
     ></fa-icon>
   </component>
@@ -29,8 +29,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ButtonTags, ButtonTypes, ButtonClasses } from '@atoms/button/button.utils';
-import { Colors } from '@components/utils';
+import { Colors } from '../../utils';
+import { ButtonClasses, ButtonTags, ButtonTypes } from './button.utils';
 
 export default defineComponent({
   name: 'app-button',
@@ -78,7 +78,7 @@ export default defineComponent({
   computed: {
     style(): Object {
       const designStyle = ButtonClasses[this.type][this.color];
-      const buttonStyle = this.icon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-xl px-3 py-1 md:px-4 md:py-1';
+      const buttonStyle = this.icon ? 'rounded-full h-40px w-40px px-0 py-0' : 'rounded-xl px-3 py-1 md:px-4 md:py-2';
       const baseStyle =
         this.tag === ButtonTags.LINK
           ? 'inline-flex align-middle items-center font-medium no-underline hover:underline cursor-pointer'

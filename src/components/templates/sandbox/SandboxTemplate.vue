@@ -1,5 +1,7 @@
 <template>
-  <div class="p-4 md:p-24">
+  <div class='py-2 md:py-12'></div>
+
+  <div class="px-4 md:px-24">
     <!-- BUTTONS -->
     <h1 class="font-extrabold text-4xl ml-2 mb-4">Buttons</h1>
 
@@ -8,41 +10,19 @@
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :isDisabled="true">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :isDisabled="true">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" icon="home"> </app-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-4">
-      <h2 class="font-bold text-xl ml-2">Monochrome</h2>
-
-      <div class="flex">
-        <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.MONOCHROME">{{ color }}</app-button>
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.MONOCHROME" :isDisabled="true">{{ color }}</app-button>
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.MONOCHROME" icon="home"></app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" icon="home"> </app-button>
         </div>
       </div>
     </div>
@@ -52,19 +32,19 @@
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.OUTLINED">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.OUTLINED">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.OUTLINED" :isDisabled="true">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.OUTLINED" :isDisabled="true">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.OUTLINED" icon="home"></app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.OUTLINED" icon="home"></app-button>
         </div>
       </div>
     </div>
@@ -74,19 +54,19 @@
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.TRANSPARENT">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.TRANSPARENT">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.TRANSPARENT" :isDisabled="true">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.TRANSPARENT" :isDisabled="true">{{ color }}</app-button>
         </div>
       </div>
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.TRANSPARENT" icon="home"></app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.TRANSPARENT" icon="home"></app-button>
         </div>
       </div>
     </div>
@@ -112,11 +92,63 @@
 
       <div class="flex">
         <div class="m-2" v-for="color in colors" v-bind:key="color">
-          <app-button :color="color" :type="buttonTypes.LINK" :tag="'a'">{{ color }}</app-button>
+          <app-button v-if="color !== Colors.LIGHT" :color="color" :type="ButtonTypes.LINK" :tag="'a'">{{ color }}</app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-4 py-4 my-6 md:px-24 bg-gradient-to-tr from-secondary-500 to-primary-500 text-white">
+    <div class="mt-4">
+      <h2 class="font-bold text-xl ml-2">Monochrome</h2>
+
+      <div class="flex">
+        <div class="m-2" v-for="color in colors" v-bind:key="color">
+          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME">{{ color }}</app-button>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="m-2" v-for="color in colors" v-bind:key="color">
+          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME" :isDisabled="true">{{ color }}</app-button>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="m-2" v-for="color in colors" v-bind:key="color">
+          <app-button :color="color" :type="ButtonTypes.FILLED_MONOCHROME" icon="home"></app-button>
         </div>
       </div>
     </div>
 
+    <div class="mt-4">
+      <h2 class="font-bold text-xl ml-2">Light</h2>
+
+      <div class="flex">
+        <div class="m-2" v-for="type in buttonTypes" v-bind:key="type">
+          <app-button v-if="type !== ButtonTypes.LINK" :color="Colors.LIGHT" :type="type">{{ type }}</app-button>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="m-2" v-for="type in buttonTypes" v-bind:key="type">
+          <app-button v-if="type !== ButtonTypes.LINK" :color="Colors.LIGHT" :type="type" :isDisabled="true">{{ type }}</app-button>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="m-2" v-for="type in buttonTypes" v-bind:key="type">
+          <app-button v-if="type !== ButtonTypes.LINK" :color="Colors.LIGHT" :type="type" icon="home"></app-button>
+        </div>
+      </div>
+
+      <div class="m-2">
+        <app-button :tag="'a'" :color="Colors.LIGHT" :type="ButtonTypes.LINK">Link</app-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-4 md:px-24">
     <!-- Inputs -->
     <h1 class="font-extrabold text-4xl ml-2 mb-4 mt-12">Inputs</h1>
 
@@ -189,6 +221,8 @@
       </div>
     </div>
   </div>
+
+  <div class='py-2 md:py-12'></div>
 </template>
 
 <script lang="ts">
@@ -205,8 +239,10 @@ export default defineComponent({
   },
   data() {
     return {
-      buttonTypes: ButtonTypes,
+      ButtonTypes: ButtonTypes,
+      Colors: Colors,
       colors: Object.values(Colors),
+      buttonTypes: Object.values(ButtonTypes),
     };
   },
 });
