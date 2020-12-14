@@ -1,4 +1,4 @@
-import { Colors } from '@components/utils';
+import { Colors } from '../../utils';
 
 export enum InputStates {
   DEFAULT = 'default',
@@ -8,7 +8,7 @@ export enum InputStates {
 }
 
 export const InputClasses = {
-  [InputStates.DEFAULT]: 'bg-gray-100 border-gray-200 text-gray-400',
+  [InputStates.DEFAULT]: 'bg-gray-100 border-gray-200 text-gray-400 hover:border-gray-400',
   [InputStates.ERROR]: 'bg-danger-50 border-danger-500 text-danger-500',
   [InputStates.SUCCESS]: 'bg-success-50 border-success-500 text-success-500',
   [InputStates.WARNING]: 'bg-warning-50 border-warning-500 text-warning-500',

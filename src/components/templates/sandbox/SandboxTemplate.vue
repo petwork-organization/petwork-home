@@ -149,6 +149,27 @@
   </div>
 
   <div class="px-4 md:px-24">
+    <!-- BUTTONS TOGGLE -->
+    <h1 class="font-extrabold text-4xl ml-2 mb-4">Button toggle</h1>
+
+    <div class="mt-4" v-for="color in colors" v-bind:key="color">
+      <h2 class="font-bold text-xl ml-2" v-if="color !== Colors.LIGHT">{{ color }}</h2>
+
+      <div class="m-2" v-if="color !== Colors.LIGHT">
+        <app-button-toggle :color="color" :items="buttonToggleItems" v-model="buttonToggleModel"></app-button-toggle>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-4 py-4 my-6 md:px-24 bg-gradient-to-tr from-secondary-500 to-primary-500 text-white">
+    <h2 class="font-bold text-xl ml-2">Light</h2>
+
+    <div class="m-2">
+      <app-button-toggle :color="Colors.LIGHT" :items="buttonToggleItems" v-model="buttonToggleModel"></app-button-toggle>
+    </div>
+  </div>
+
+  <div class="px-4 md:px-24">
     <!-- Inputs -->
     <h1 class="font-extrabold text-4xl ml-2 mb-4 mt-12">Inputs</h1>
 
@@ -227,15 +248,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppButton from '@atoms/button/AppButton.vue';
-import { ButtonTypes } from '@atoms/button/button.utils';
-import { Colors } from '@components/utils';
-import AppInput from '@atoms/input/AppInput.vue';
+import AppButton from '../../atoms/button/AppButton.vue';
+import AppInput from '../../atoms/input/AppInput.vue';
+import AppButtonToggle from '../../molecules/button-toggle/AppButtonToggle.vue';
+import { ButtonTypes } from '../../atoms/button/button.utils';
+import { Colors } from '../../utils';
 
 export default defineComponent({
   components: {
     AppButton,
     AppInput,
+    AppButtonToggle,
   },
   data() {
     return {
@@ -243,6 +266,12 @@ export default defineComponent({
       Colors: Colors,
       colors: Object.values(Colors),
       buttonTypes: Object.values(ButtonTypes),
+      buttonToggleItems: [
+        { value: 1, label: 'Item 1' },
+        { value: 2, label: 'Item 2' },
+        { value: 3, label: 'Item 3' },
+      ],
+      buttonToggleModel: '',
     };
   },
 });

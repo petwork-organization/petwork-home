@@ -44,6 +44,8 @@ module.exports = {
       backgroundColor: ['active', 'disabled'],
       borderColor: ['active', 'disabled'],
       textColor: ['disabled'],
+      borderWidth: ['first', 'last'],
+      borderRadius: ['first', 'last'],
     },
   },
   corePlugins: {
