@@ -3,7 +3,7 @@
       <div
         v-for="item in items"
         :key="item.value"
-        :class="[buttonToggleBaseStyle, item.value === value ? buttonToggleActiveStyle : buttonToggleStyle]"
+        :class="[buttonToggleBaseStyle, item.value === modelValue ? buttonToggleActiveStyle : buttonToggleStyle]"
         @click="select(item.value)"
       >{{item.label}}</div>
   </div>
@@ -19,8 +19,9 @@ import {
 } from './button-toggle.utils';
 
 export default defineComponent({
-  name: 'button-toggle',
+  name: 'app-button-toggle',
   props: {
+    modelValue: [String, Number],
     items: {
       type: Array as PropType<ButtonToggleItem[]>,
       required: true,
@@ -29,20 +30,16 @@ export default defineComponent({
       type: String as PropType<Colors>,
       default: Colors.PRIMARY,
     },
-    initialValue: [String, Number],
-    onSelect: Function,
-
   },
+  emits: ['update:modelValue'],
   data() {
     return {
       buttonToggleBaseStyle: 'border-t-2 border-b-2 last:border-r-2 first:border-l-2 first:rounded-l-xl last:rounded-r-xl px-3 py-1 md:px-4 md:py-2 cursor-pointer transition duration-300',
-      value: this.initialValue || '',
     }
   },
   methods: {
     select(value: string) {
-      this.value = value;
-      this.onSelect && this.onSelect(this.value);
+      this.$emit('update:modelValue', value)
     }
   },
   computed: {
@@ -54,7 +51,7 @@ export default defineComponent({
     },
   },
   mounted() {
-    if (!this.value && this.items && this.items.length) {
+    if (!this.modelValue && this.items && this.items.length) {
       this.select(this.items[0].value);
     }
   }

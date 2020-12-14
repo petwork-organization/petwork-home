@@ -156,7 +156,7 @@
       <h2 class="font-bold text-xl ml-2" v-if="color !== Colors.LIGHT">{{ color }}</h2>
 
       <div class="m-2" v-if="color !== Colors.LIGHT">
-        <button-toggle :color="color" :items="buttonToggleItems"></button-toggle>
+        <app-button-toggle :color="color" :items="buttonToggleItems" v-model="buttonToggleModel"></app-button-toggle>
       </div>
     </div>
   </div>
@@ -165,7 +165,7 @@
     <h2 class="font-bold text-xl ml-2">Light</h2>
 
     <div class="m-2">
-      <button-toggle :color="Colors.LIGHT" :items="buttonToggleItems"></button-toggle>
+      <app-button-toggle :color="Colors.LIGHT" :items="buttonToggleItems" v-model="buttonToggleModel"></app-button-toggle>
     </div>
   </div>
 
@@ -248,17 +248,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppButton from '@atoms/button/AppButton.vue';
-import { ButtonTypes } from '@atoms/button/button.utils';
-import { Colors } from '@components/utils';
-import AppInput from '@atoms/input/AppInput.vue';
-import ButtonToggle from '../../molecules/button-toggle/ButtonToggle.vue';
+import AppButton from '../../atoms/button/AppButton.vue';
+import AppInput from '../../atoms/input/AppInput.vue';
+import AppButtonToggle from '../../molecules/button-toggle/AppButtonToggle.vue';
+import { ButtonTypes } from '../../atoms/button/button.utils';
+import { Colors } from '../../utils';
 
 export default defineComponent({
   components: {
     AppButton,
     AppInput,
-    ButtonToggle,
+    AppButtonToggle,
   },
   data() {
     return {
@@ -270,7 +270,8 @@ export default defineComponent({
         { value: 1, label: 'Item 1' },
         { value: 2, label: 'Item 2' },
         { value: 3, label: 'Item 3' },
-      ]
+      ],
+      buttonToggleModel: '',
     };
   },
 });

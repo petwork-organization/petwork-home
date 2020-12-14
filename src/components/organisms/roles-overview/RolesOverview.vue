@@ -5,12 +5,11 @@
     <div class="text-white text-3xl sm:text-5xl font-extrabold">Je suis ?</div>
 
     <div class="mt-6 sm:mt-12">
-      <button-toggle
+      <app-button-toggle
         :color="Colors.LIGHT"
         :items="buttonToggleItems"
-        :initial-value="activeRole"
-        :on-select="onSelectRole"
-      ></button-toggle>
+        v-model="activeRole"
+      ></app-button-toggle>
     </div>
 
     <div class="text-white max-w-lg text-center font-light mt-6 sm:mt-12">
@@ -18,7 +17,7 @@
     </div>
 
     <div class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-12 mt-6 sm:mt-12 -mb-12">
-      <roles-overview-card class="flex-1" v-for="(item, index) in items[activeRole]">
+      <roles-overview-card class="flex-1" v-for="(item, index) in items">
         <template v-slot:badge>{{ index + 1 }}</template>
         <template v-slot:title>{{ item.title }}</template>
         <template v-slot:content>
@@ -33,22 +32,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ButtonToggle from '../../molecules/button-toggle/ButtonToggle.vue';
+import AppButtonToggle from '../../molecules/button-toggle/AppButtonToggle.vue';
 import { Colors } from '../../utils';
 import { breedingOverviewItems, familyOverviewItems } from './roles-overview.utils';
 import RolesOverviewCard from './RolesOverviewCard.vue';
 
 export default defineComponent({
   name: 'roles-overview',
-  components: { RolesOverviewCard, ButtonToggle },
-
+  components: { RolesOverviewCard, AppButtonToggle },
   data() {
     return {
       Colors: Colors,
-      items: {
-        breeding: breedingOverviewItems,
-        family: familyOverviewItems,
-      },
       buttonToggleItems: [
         {
           value: 'breeding',
@@ -62,10 +56,15 @@ export default defineComponent({
       activeRole: 'breeding',
     };
   },
-  methods: {
-    onSelectRole(role: string) {
-      this.activeRole = role;
-    }
-  },
+  computed: {
+    items(): Object[] {
+      const items = {
+        breeding: breedingOverviewItems,
+        family: familyOverviewItems,
+      };
+
+      return items[this.activeRole]
+    },
+  }
 });
 </script>
