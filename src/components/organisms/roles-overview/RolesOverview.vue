@@ -1,19 +1,24 @@
 <template>
   <img src="../../../assets/shapes/wave-primary-500.svg" class="w-full -mb-1">
 
-  <div class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-32">
-    <div class="text-white text-5xl font-extrabold">Je suis ?</div>
+  <div class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-16 md:px-32">
+    <div class="text-white text-3xl sm:text-5xl font-extrabold">Je suis ?</div>
 
-    <div class="mt-12">
-      <button-toggle :color="Colors.LIGHT" :items="buttonToggleItems"></button-toggle>
+    <div class="mt-6 sm:mt-12">
+      <button-toggle
+        :color="Colors.LIGHT"
+        :items="buttonToggleItems"
+        :initial-value="activeRole"
+        :on-select="onSelectRole"
+      ></button-toggle>
     </div>
 
-    <div class="text-white max-w-lg text-center font-light mt-12">
+    <div class="text-white max-w-lg text-center font-light mt-6 sm:mt-12">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla augue hendrerit est congue pulvinar.
     </div>
 
-    <div class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-12 mt-12 -mb-12">
-      <roles-overview-card class="flex-1" v-for="(item, index) in breedingOverviewItems">
+    <div class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-12 mt-6 sm:mt-12 -mb-12">
+      <roles-overview-card class="flex-1" v-for="(item, index) in items[activeRole]">
         <template v-slot:badge>{{ index + 1 }}</template>
         <template v-slot:title>{{ item.title }}</template>
         <template v-slot:content>
@@ -30,6 +35,7 @@
 import { defineComponent } from 'vue';
 import ButtonToggle from '../../molecules/button-toggle/ButtonToggle.vue';
 import { Colors } from '../../utils';
+import { breedingOverviewItems, familyOverviewItems } from './roles-overview.utils';
 import RolesOverviewCard from './RolesOverviewCard.vue';
 
 export default defineComponent({
@@ -39,33 +45,27 @@ export default defineComponent({
   data() {
     return {
       Colors: Colors,
-      breedingOverviewItems: [
-        {
-          title: 'Lorem ipsum',
-          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
-        },
-        {
-          title: 'Lorem ipsum',
-          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
-        },
-        {
-          title: 'Lorem ipsum',
-          content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
-        },
-      ],
+      items: {
+        breeding: breedingOverviewItems,
+        family: familyOverviewItems,
+      },
       buttonToggleItems: [
         {
           value: 'breeding',
           label: "Un élevage",
-          onSelect: () => null,
         },
         {
           value: 'family',
           label: "Une famille",
-          onSelect: () => null,
         },
-      ]
+      ],
+      activeRole: 'breeding',
     };
+  },
+  methods: {
+    onSelectRole(role: string) {
+      this.activeRole = role;
+    }
   },
 });
 </script>

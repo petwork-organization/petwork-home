@@ -4,7 +4,7 @@
         v-for="item in items"
         :key="item.value"
         :class="[buttonToggleBaseStyle, item.value === value ? buttonToggleActiveStyle : buttonToggleStyle]"
-        @click="onSelect(item.value)"
+        @click="select(item.value)"
       >{{item.label}}</div>
   </div>
 </template>
@@ -29,16 +29,20 @@ export default defineComponent({
       type: String as PropType<Colors>,
       default: Colors.PRIMARY,
     },
+    initialValue: [String, Number],
+    onSelect: Function,
+
   },
   data() {
     return {
-      buttonToggleBaseStyle: 'border-t-2 border-b-2 last:border-r-2 first:border-l-2 first:rounded-l-xl last:rounded-r-xl px-6 py-3 cursor-pointer transition duration-300',
-      value: '',
+      buttonToggleBaseStyle: 'border-t-2 border-b-2 last:border-r-2 first:border-l-2 first:rounded-l-xl last:rounded-r-xl px-3 py-1 md:px-4 md:py-2 cursor-pointer transition duration-300',
+      value: this.initialValue || '',
     }
   },
   methods: {
-    onSelect(value: string) {
+    select(value: string) {
       this.value = value;
+      this.onSelect && this.onSelect(this.value);
     }
   },
   computed: {
@@ -50,7 +54,9 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.value = this.items ? this.items[0].value : '';
+    if (!this.value && this.items && this.items.length) {
+      this.select(this.items[0].value);
+    }
   }
 });
 </script>

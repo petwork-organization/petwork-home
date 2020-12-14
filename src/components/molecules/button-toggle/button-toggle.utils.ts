@@ -1,9 +1,8 @@
 import { Colors } from '../../utils';
 
 export interface ButtonToggleItem {
-  value: String,
+  value: String | Number,
   label: String,
-  onClick: () => any,
 }
 
 export const ButtonToggleClasses = {

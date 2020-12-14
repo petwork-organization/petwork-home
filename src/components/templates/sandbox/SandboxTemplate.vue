@@ -267,9 +267,9 @@ export default defineComponent({
       colors: Object.values(Colors),
       buttonTypes: Object.values(ButtonTypes),
       buttonToggleItems: [
-        { value: 1, label: 'Item 1', onClick: () => null },
-        { value: 2, label: 'Item 2', onClick: () => null },
-        { value: 3, label: 'Item 3', onClick: () => null },
+        { value: 1, label: 'Item 1' },
+        { value: 2, label: 'Item 2' },
+        { value: 3, label: 'Item 3' },
       ]
     };
   },
