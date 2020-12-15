@@ -2,6 +2,10 @@
   <div class='h-full'>
     <the-navbar></the-navbar>
 
+    <header class="px-32 py-16">
+      <h1 class="font-extrabold text-5xl text-primary-500">Adopter n'a jamais été aussi simple !</h1>
+    </header>
+
     <div class='pt-70px'></div>
 
     <div class="flex justify-center">

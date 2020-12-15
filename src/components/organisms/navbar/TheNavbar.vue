@@ -1,6 +1,6 @@
 <template>
   <div class="h-70px w-full flex items-center justify-between py-4 px-4 sm:px-16 md:px-32" :class="[stickyClasses]">
-    <img alt="Logo Petwork" class="h-10 hidden sm:block" src="../../../assets/logo-full-small.svg" />
+    <img alt="Logo Petwork" class="h-10 hidden sm:block" src="../../../assets/logo-full.svg" />
     <img alt="Logo Petwork" class="h-8 sm:hidden" src="../../../assets/logo.svg" />
 
     <div class="flex">
