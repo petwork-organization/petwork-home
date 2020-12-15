@@ -10,7 +10,11 @@
       Ils ont adoptés Petwork !
     </div>
     <div class="flex flex-row">
-      <app-carousel>test</app-carousel>
+      <app-carousel :items="items">
+        <template v-slot:item="{ item }">
+          {{ item.test }}
+        </template>
+      </app-carousel>
     </div>
   </div>
   <img
@@ -28,7 +32,16 @@ export default defineComponent({
   name: 'opinion-overview',
   components: { AppCarousel, AppCard },
   data() {
-    return {};
+    return {
+      items: [
+        {
+          test: 'test',
+        },
+        {
+          test: 'test2',
+        },
+      ],
+    };
   },
 });
 </script>
