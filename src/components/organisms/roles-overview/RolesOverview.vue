@@ -1,7 +1,11 @@
 <template>
-  <img src="../../../assets/shapes/wave-primary-500.svg" class="w-full -mb-1">
+  <div class="text-primary-500">
+    <app-wave></app-wave>
+  </div>
 
-  <div class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-16 md:px-32">
+  <div
+    class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-16 md:px-32"
+  >
     <div class="text-white text-3xl sm:text-5xl font-extrabold">Je suis ?</div>
 
     <div class="mt-6 sm:mt-12">
@@ -13,10 +17,13 @@
     </div>
 
     <div class="text-white max-w-lg text-center font-light mt-6 sm:mt-12">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla augue hendrerit est congue pulvinar.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla
+      augue hendrerit est congue pulvinar.
     </div>
 
-    <div class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-12 mt-6 sm:mt-12 -mb-12">
+    <div
+      class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-12 mt-6 sm:mt-12 -mb-12"
+    >
       <roles-overview-card class="flex-1" v-for="(item, index) in items">
         <template v-slot:badge>{{ index + 1 }}</template>
         <template v-slot:title>{{ item.title }}</template>
@@ -27,30 +34,38 @@
     </div>
   </div>
 
-  <img src="../../../assets/shapes/wave-secondary-400.svg" class="w-full -mt-1 transform rotate-180 relative -z-10">
+  <div
+    class="text-secondary-400 w-full -mt-1 transform rotate-180 relative -z-10"
+  >
+    <app-wave></app-wave>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import AppButtonToggle from '../../molecules/button-toggle/AppButtonToggle.vue';
 import { Colors } from '../../utils';
-import { breedingOverviewItems, familyOverviewItems } from './roles-overview.utils';
+import {
+  breedingOverviewItems,
+  familyOverviewItems,
+} from './roles-overview.utils';
 import RolesOverviewCard from './RolesOverviewCard.vue';
+import AppWave from '../../atoms/wave/AppWave.vue';
 
 export default defineComponent({
   name: 'roles-overview',
-  components: { RolesOverviewCard, AppButtonToggle },
+  components: { AppWave, RolesOverviewCard, AppButtonToggle },
   data() {
     return {
       Colors: Colors,
       buttonToggleItems: [
         {
           value: 'breeding',
-          label: "Un élevage",
+          label: 'Un élevage',
         },
         {
           value: 'family',
-          label: "Une famille",
+          label: 'Une famille',
         },
       ],
       activeRole: 'breeding',
@@ -63,8 +78,8 @@ export default defineComponent({
         family: familyOverviewItems,
       };
 
-      return items[this.activeRole]
+      return items[this.activeRole];
     },
-  }
+  },
 });
 </script>
