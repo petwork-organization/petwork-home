@@ -1,19 +1,17 @@
 <template>
   <div class='h-full relative'>
-    <img src="../../../assets/shapes/circle-gradient-primary-secondary.svg" class="absolute -top-1 right-0 w-1/2 -z-10">
+    <the-navbar class='relative z-10'></the-navbar>
 
-    <the-navbar></the-navbar>
+    <header class="relative px-4 py-24 md:py-36 sm:px-16 lg:px-32 -mt-20 bg-gradient-to-bl from-secondary-400 to-primary-500">
+      <h1 class="w-full lg:w-1/2 font-extrabold text-3xl md:text-5xl text-white">Adopter n'a jamais été aussi simple !</h1>
 
-    <header class="relative px-32 py-16">
-      <h1 class="w-1/2 font-extrabold text-5xl text-primary-500">Adopter n'a jamais été aussi simple !</h1>
-
-      <p class='w-1/2 mt-12 text-lg'>
+      <p class='w-full lg:w-1/2 mt-4 sm:mt-12 text-lg text-gray-300'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Integer fringilla augue hendrerit est congue pulvinar.
       </p>
     </header>
 
-    <div class="flex justify-center">
+    <div class="relative flex justify-center -mt-24 z-10">
       <div class="max-w-full mt-8 px-4 w-full sm:max-w-4xl">
         <search-card></search-card>
       </div>
