@@ -13,9 +13,21 @@
     <div class="flex flex-row w-full my-24">
       <app-carousel :items="items">
         <template v-slot:item="{ item }">
-          <app-card class="mx-4">
+          <app-card class="mx-4 py-4">
             <template v-slot:content>
-              {{ item.test }}
+              <div class="flex flex-row">
+                <div class="flex flex-col justify-center">
+                  <img class="rounded-full h-90px w-90px" :src="item.avatar" />
+                </div>
+                <div class="w-9/12">
+                  <div class="flex flex-col">
+                    <div class="text-justify">{{ item.content }}</div>
+                    <div class="text-accent-400 text-xl font-semibold">
+                      {{ item.title }}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </template>
           </app-card>
         </template>
@@ -23,7 +35,7 @@
     </div>
   </div>
 
-  <div class="text-secondary-500 transform rotate-180 relative -z-10">
+  <div class="text-secondary-500 transform rotate-180 relative -mt-1 -z-10">
     <app-wave></app-wave>
   </div>
 </template>
@@ -41,13 +53,22 @@ export default defineComponent({
     return {
       items: [
         {
-          test: 'test',
+          title: 'Lorem ipsum i dolor sin amet.',
+          content:
+            'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+          avatar: 'https://randomuser.me/api/portraits/women/42.jpg',
         },
         {
-          test: 'test2',
+          title: 'Lorem ipsum i dolor sin amet.',
+          content:
+            'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+          avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
         },
         {
-          test: 'test3',
+          title: 'Lorem ipsum i dolor sin amet.',
+          content:
+            'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+          avatar: 'https://randomuser.me/api/portraits/women/46.jpg',
         },
       ],
     };

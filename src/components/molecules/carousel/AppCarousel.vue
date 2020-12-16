@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full flex flex-row items-center justify-center">
-    <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
+    <div class="z-10 absolute left-0 top-1/2 transform -translate-y-1/2">
       <app-button
         color="primary"
         icon="arrow-left"
@@ -8,22 +8,17 @@
       ></app-button>
     </div>
 
-    <slot
-      name="item"
-      v-bind:item="previousItem"
-    ></slot>
+    <div class="opacity-30">
+      <slot name="item" v-bind:item="previousItem"></slot>
+    </div>
 
-    <slot
-      name="item"
-      v-bind:item="currentItem"
-    ></slot>
+    <slot name="item" v-bind:item="currentItem"></slot>
 
-    <slot
-      name="item"
-      v-bind:item="nextItem"
-    ></slot>
+    <div class="opacity-30">
+      <slot name="item" v-bind:item="nextItem"></slot>
+    </div>
 
-    <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+    <div class="z-10 absolute right-0 top-1/2 transform -translate-y-1/2">
       <app-button color="primary" icon="arrow-right" @click="next"></app-button>
     </div>
   </div>
@@ -58,7 +53,9 @@ export default defineComponent({
   },
   computed: {
     previousItem() {
-      return this.items[this.currentIndex === 0 ? this.items.length - 1 : this.currentIndex - 1];
+      return this.items[
+        this.currentIndex === 0 ? this.items.length - 1 : this.currentIndex - 1
+      ];
     },
     nextItem() {
       return this.items[(this.currentIndex + 1) % this.items.length];
