@@ -5,11 +5,11 @@
 
     <div class="flex">
       <div class="hidden sm:block">
-        <app-button type="transparent">S'inscrire</app-button>
+        <app-button type="transparent" :color="sticky ? Colors.PRIMARY : Colors.LIGHT">S'inscrire</app-button>
       </div>
 
       <div class="ml-4">
-        <app-button :type="ButtonTypes.OUTLINED">Se connecter</app-button>
+        <app-button :type="ButtonTypes.OUTLINED" :color="sticky ? Colors.PRIMARY : Colors.LIGHT">Se connecter</app-button>
       </div>
     </div>
   </div>
@@ -19,12 +19,14 @@
 import { defineComponent } from 'vue';
 import AppButton from '@atoms/button/AppButton.vue';
 import { ButtonTypes } from '../../atoms/button/button.utils';
+import { Colors } from '../../utils';
 
 export default defineComponent({
   name: 'the-navbar',
   components: { AppButton },
   data() {
     return {
+      Colors: Colors,
       ButtonTypes: ButtonTypes,
       sticky: false,
       scrollPosition: 0, // Last scroll position
