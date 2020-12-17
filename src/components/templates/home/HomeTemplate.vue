@@ -11,7 +11,9 @@
       </p>
     </header>
 
-    <img src="../../../assets/shapes/wave-primary-500.svg" class="w-full -mt-1 -mb-20 sm:-mb-32 lg:-mb-48 transform rotate-180 relative -z-10">
+    <div class="text-primary-500 transform rotate-180 relative w-full -mt-1 -mb-20 sm:-mb-32 lg:-mb-48 -z-10">
+      <app-wave></app-wave>
+    </div>
 
     <div class="relative flex justify-center z-10">
       <div class="max-w-full mt-8 px-4 w-full sm:max-w-4xl">
@@ -19,23 +21,35 @@
       </div>
     </div>
 
-    <div class='h-200px'></div>
+    <div class="h-200px"></div>
 
     <div class="w-full my-12">
       <roles-overview></roles-overview>
+    </div>
+
+    <div class="w-full">
+      <opinion-overview></opinion-overview>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import SearchCard from '@organisms/search-card/SearchCard.vue';
-import TheNavbar from '@organisms/navbar/TheNavbar.vue';
 import { defineComponent } from 'vue';
-import RolesOverview from '@organisms/roles-overview/RolesOverview.vue';
+import AppWave from '../../atoms/wave/AppWave.vue';
+import TheNavbar from '../../organisms/navbar/TheNavbar.vue';
+import OpinionOverview from '../../organisms/opinion-overview/OpinionOverview.vue';
+import RolesOverview from '../../organisms/roles-overview/RolesOverview.vue';
+import SearchCard from '../../organisms/search-card/SearchCard.vue';
 
 export default defineComponent({
   name: 'HomeTemplate',
-  components: { RolesOverview, SearchCard, TheNavbar },
+  components: {
+    OpinionOverview,
+    RolesOverview,
+    SearchCard,
+    TheNavbar,
+    AppWave
+  },
   props: {},
 });
 </script>
