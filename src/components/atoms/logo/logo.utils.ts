@@ -1,7 +1,6 @@
 export enum LogoModes {
-  COLOR = 'color',
-  LIGHT = 'light',
-  DARK = 'dark',
+  DEFAULT = 'default',
+  MONOCHROME = 'monochrome',
 }
 
 export enum LogoVariants {
@@ -9,9 +8,3 @@ export enum LogoVariants {
   FULL = 'full',
   LOGOTYPE = 'logotype',
 }
-
-export const LogoColors = {
-  [LogoModes.COLOR]: '',
-  [LogoModes.LIGHT]: 'text-white',
-  [LogoModes.DARK]: 'text-gray-700',
-};

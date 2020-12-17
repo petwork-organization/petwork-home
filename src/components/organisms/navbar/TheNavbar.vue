@@ -1,9 +1,9 @@
 <template>
-  <div class="h-70px w-full flex items-center justify-between py-4 px-4 sm:px-16 lg:px-32" :class="[stickyClasses]">
-    <app-logo v-if="sticky" :mode="LogoModes.COLOR" :variant="LogoVariants.FULL" class="h-40px hidden md:block text-primary-500"></app-logo>
-    <app-logo v-if="sticky" :mode="LogoModes.COLOR" :variant="LogoVariants.SMALL" class="h-30px md:hidden text-primary-500"></app-logo>
-    <app-logo v-if="!sticky" :mode="LogoModes.LIGHT" :variant="LogoVariants.FULL" class="h-40px hidden md:block"></app-logo>
-    <app-logo v-if="!sticky" :mode="LogoModes.LIGHT" :variant="LogoVariants.SMALL" class="h-30px md:hidden"></app-logo>
+  <div class="h-70px w-full flex items-center justify-between py-4 px-4 sm:px-16 lg:px-32 transition-colors duration-500" :class="[stickyClasses]">
+    <app-logo v-if="sticky" :mode="LogoModes.DEFAULT" :variant="LogoVariants.FULL" class="h-40px hidden md:block"></app-logo>
+    <app-logo v-if="sticky" :mode="LogoModes.DEFAULT" :variant="LogoVariants.SMALL" class="h-30px md:hidden"></app-logo>
+    <app-logo v-if="!sticky" :mode="LogoModes.MONOCHROME" :variant="LogoVariants.FULL" class="h-40px hidden md:block text-white"></app-logo>
+    <app-logo v-if="!sticky" :mode="LogoModes.MONOCHROME" :variant="LogoVariants.SMALL" class="h-30px md:hidden text-white"></app-logo>
 
     <div class="flex">
       <div class="hidden sm:block">
