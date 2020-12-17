@@ -1,7 +1,9 @@
 <template>
-  <div class="h-70px w-full flex items-center justify-between py-4 px-4 sm:px-16 md:px-32" :class="[stickyClasses]">
-    <img alt="Logo Petwork" class="h-10 hidden sm:block" src="../../../assets/logo-full.svg" />
-    <img alt="Logo Petwork" class="h-8 sm:hidden" src="../../../assets/logo.svg" />
+  <div class="h-70px w-full flex items-center justify-between py-4 px-4 sm:px-16 lg:px-32 transition-colors duration-500" :class="[stickyClasses]">
+    <app-logo v-if="sticky" :mode="LogoModes.DEFAULT" :variant="LogoVariants.FULL" class="h-40px hidden md:block"></app-logo>
+    <app-logo v-if="sticky" :mode="LogoModes.DEFAULT" :variant="LogoVariants.SMALL" class="h-30px md:hidden"></app-logo>
+    <app-logo v-if="!sticky" :mode="LogoModes.MONOCHROME" :variant="LogoVariants.FULL" class="h-40px hidden md:block text-white"></app-logo>
+    <app-logo v-if="!sticky" :mode="LogoModes.MONOCHROME" :variant="LogoVariants.SMALL" class="h-30px md:hidden text-white"></app-logo>
 
     <div class="flex">
       <div class="hidden sm:block">
@@ -19,15 +21,19 @@
 import { defineComponent } from 'vue';
 import AppButton from '@atoms/button/AppButton.vue';
 import { ButtonTypes } from '../../atoms/button/button.utils';
+import AppLogo from '../../atoms/logo/AppLogo.vue';
+import { LogoModes, LogoVariants } from '../../atoms/logo/logo.utils';
 import { Colors } from '../../utils';
 
 export default defineComponent({
   name: 'the-navbar',
-  components: { AppButton },
+  components: { AppButton, AppLogo },
   data() {
     return {
       Colors: Colors,
       ButtonTypes: ButtonTypes,
+      LogoVariants: LogoVariants,
+      LogoModes: LogoModes,
       sticky: false,
       scrollPosition: 0, // Last scroll position
     }
