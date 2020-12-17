@@ -1,5 +1,7 @@
 <template>
-  <div class="relative w-full flex flex-row items-center justify-center">
+  <div
+    class="relative w-full flex flex-row items-center justify-center py-12 overflow-x-hidden"
+  >
     <div class="z-10 absolute left-0 top-1/2 transform -translate-y-1/2">
       <app-button
         color="primary"
@@ -8,13 +10,15 @@
       ></app-button>
     </div>
 
-    <div class="opacity-30">
+    <div :class="cardWidthClass" class="opacity-30 transform scale-90">
       <slot name="item" v-bind:item="previousItem"></slot>
     </div>
 
-    <slot name="item" v-bind:item="currentItem"></slot>
+    <div :class="cardWidthClass" class="mx-4">
+      <slot name="item" v-bind:item="currentItem"></slot>
+    </div>
 
-    <div class="opacity-30">
+    <div :class="cardWidthClass" class="opacity-30 transform scale-90">
       <slot name="item" v-bind:item="nextItem"></slot>
     </div>
 
@@ -40,6 +44,7 @@ export default defineComponent({
   data() {
     return {
       currentIndex: 0,
+      cardWidthClass: 'min-w-3/4 md:min-w-1/2 lg:min-w-0 lg:w-600px',
     };
   },
   methods: {

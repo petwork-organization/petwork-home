@@ -4,25 +4,34 @@
   </div>
 
   <div
-    class="flex flex-col items-center bg-gradient-to-b from-accent-400 to-secondary-500 px-4 sm:px-16 md:px-32"
+    class="flex flex-col items-center bg-gradient-to-b from-accent-400 to-secondary-500"
   >
     <div class="text-white text-3xl sm:text-5xl font-extrabold">
       Ils ont adoptés Petwork !
     </div>
 
-    <div class="flex flex-row w-full my-24">
+    <div class="flex flex-row w-full my-12">
       <app-carousel :items="items">
         <template v-slot:item="{ item }">
-          <app-card class="mx-4 py-4">
+          <app-card class="p-2">
             <template v-slot:content>
               <div class="flex flex-row">
-                <div class="flex flex-col justify-center">
-                  <img class="rounded-full h-90px w-90px" :src="item.avatar" />
+                <div class="flex flex-col justify-center mr-6">
+                  <div
+                    class="rounded-full h-110px w-110px"
+                    :style="{
+                      'background-image': 'url(\'' + item.avatar + '\')',
+                      'background-position': 'center',
+                      'background-size': 'cover',
+                    }"
+                  ></div>
                 </div>
+
                 <div class="w-9/12">
                   <div class="flex flex-col">
                     <div class="text-justify">{{ item.content }}</div>
-                    <div class="text-accent-400 text-xl font-semibold">
+
+                    <div class="text-accent-400 text-base font-semibold mt-4">
                       {{ item.title }}
                     </div>
                   </div>
@@ -62,7 +71,7 @@ export default defineComponent({
           title: 'Lorem ipsum i dolor sin amet.',
           content:
             'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
-          avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+          avatar: 'https://randomuser.me/api/portraits/men/44.jpg',
         },
         {
           title: 'Lorem ipsum i dolor sin amet.',

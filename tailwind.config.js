@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': [ '"Work Sans"', 'Sans-serif']
+        sans: ['"Work Sans"', 'Sans-serif'],
       },
       colors: {
         primary: colors.blue,
@@ -26,7 +26,7 @@ module.exports = {
           70: 'rgba(255, 255, 255, .7)',
           80: 'rgba(255, 255, 255, .8)',
           90: 'rgba(255, 255, 255, .9)',
-        }
+        },
       },
       zIndex: {
         '-10': '-10',
@@ -38,7 +38,10 @@ module.exports = {
         slideDown: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(0)' },
-        }
+        },
+      },
+      minWidth: {
+        '3/4': '75%',
       },
     },
   },
@@ -56,6 +59,11 @@ module.exports = {
   },
   plugins: [require('tailwindcss-pixel-dimensions')],
   purge: {
-    content: ['./public/**/*.html', './src/**/*.html', './src/**/*.ts', './src/**/*.vue'],
+    content: [
+      './public/**/*.html',
+      './src/**/*.html',
+      './src/**/*.ts',
+      './src/**/*.vue',
+    ],
   },
 };
