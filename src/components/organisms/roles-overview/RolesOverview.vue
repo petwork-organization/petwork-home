@@ -1,7 +1,7 @@
 <template>
   <img src="../../../assets/shapes/wave-primary-500.svg" class="w-full -mb-1">
 
-  <div class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-16 md:px-32">
+  <div class="flex flex-col items-center bg-gradient-to-t from-secondary-400 to-primary-500 px-4 sm:px-16 lg:px-32">
     <div class="text-white text-3xl sm:text-5xl font-extrabold">Je suis ?</div>
 
     <div class="mt-6 sm:mt-12">
