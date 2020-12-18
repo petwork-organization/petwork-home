@@ -2,19 +2,11 @@
   <div
     class="relative w-full flex flex-row items-center justify-center py-12 overflow-x-hidden"
   >
-    <div class="z-10 absolute left-0 top-1/2 transform -translate-y-1/2">
-      <app-button
-        color="primary"
-        icon="arrow-left"
-        @click="previous"
-      ></app-button>
-    </div>
-
     <div :class="cardWidthClass" class="opacity-30 transform scale-90">
       <slot name="item" v-bind:item="previousItem"></slot>
     </div>
 
-    <div :class="cardWidthClass" class="mx-4">
+    <div :class="cardWidthClass">
       <slot name="item" v-bind:item="currentItem"></slot>
     </div>
 
@@ -22,7 +14,15 @@
       <slot name="item" v-bind:item="nextItem"></slot>
     </div>
 
-    <div class="z-10 absolute right-0 top-1/2 transform -translate-y-1/2">
+    <div
+      class="absolute z-10 flex justify-between absolute w-full top-1/2 transform -translate-y-1/2 px-4 sm:px-16 lg:px-32"
+    >
+      <app-button
+        color="primary"
+        icon="arrow-left"
+        @click="previous"
+      ></app-button>
+
       <app-button color="primary" icon="arrow-right" @click="next"></app-button>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default defineComponent({
   data() {
     return {
       currentIndex: 0,
-      cardWidthClass: 'min-w-3/4 md:min-w-1/2 lg:min-w-0 lg:w-600px',
+      cardWidthClass: 'min-w-3/4 md:min-w-1/2 lg:min-w-0 lg:w-600px mx-0.5',
     };
   },
   methods: {

@@ -1,22 +1,24 @@
 <template>
-  <div class="text-accent-400">
+  <div class="text-accent-400 -mb-1">
     <app-wave></app-wave>
   </div>
 
   <div
     class="flex flex-col items-center bg-gradient-to-b from-accent-400 to-secondary-500"
   >
-    <div class="text-white text-3xl sm:text-5xl font-extrabold">
+    <div
+      class="text-white text-3xl sm:text-5xl text-center font-extrabold pt-2 px-4 sm:px-16 lg:px-32"
+    >
       Ils ont adoptés Petwork !
     </div>
 
-    <div class="flex flex-row w-full my-12">
+    <div class="flex flex-row w-full">
       <app-carousel :items="items">
         <template v-slot:item="{ item }">
-          <app-card class="p-2">
+          <app-card class="p-6">
             <template v-slot:content>
-              <div class="flex flex-row">
-                <div class="flex flex-col justify-center mr-6">
+              <div class="flex flex-col lg:flex-row items-center">
+                <div class="flex flex-col justify-center mb-6 lg:mb-0 lg:mr-6">
                   <div
                     class="rounded-full h-110px w-110px"
                     :style="{
@@ -27,9 +29,9 @@
                   ></div>
                 </div>
 
-                <div class="w-9/12">
-                  <div class="flex flex-col">
-                    <div class="text-justify">{{ item.content }}</div>
+                <div class="flex-1">
+                  <div class="flex flex-col text-center lg:text-left">
+                    <div>{{ item.content }}</div>
 
                     <div class="text-accent-400 text-base font-semibold mt-4">
                       {{ item.title }}
@@ -44,7 +46,7 @@
     </div>
   </div>
 
-  <div class="text-secondary-500 transform rotate-180 relative -mt-1 -z-10">
+  <div class="text-secondary-500 transform rotate-180 relative -z-10 -mt-1">
     <app-wave></app-wave>
   </div>
 </template>

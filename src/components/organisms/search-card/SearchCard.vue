@@ -1,20 +1,24 @@
 <template>
   <app-card>
     <template v-slot:content>
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex-auto sm:mr-5">
-          <div class="font-semibold text-accent-400 mb-1">Genre d'animal</div>
-          <app-input placeholder="Quelle race recherchez-vous ?"></app-input>
+      <div class="p-4">
+        <div class="flex flex-col sm:flex-row">
+          <div class="flex-auto sm:mr-5">
+            <div class="font-semibold text-accent-400 mb-1">Genre d'animal</div>
+            <app-input placeholder="Quelle race recherchez-vous ?"></app-input>
+          </div>
+
+          <div class="flex-auto mt:5 sm:mt-0 sm:ml-5">
+            <div class="font-semibold text-accent-400 mb-1">Zone</div>
+            <app-input
+              placeholder="Dans quelle région habitez-vous ?"
+            ></app-input>
+          </div>
         </div>
 
-        <div class="flex-auto mt:5 sm:mt-0 sm:ml-5">
-          <div class="font-semibold text-accent-400 mb-1">Zone</div>
-          <app-input placeholder="Dans quelle région habitez-vous ?"></app-input>
+        <div class="flex justify-center">
+          <app-button suffixIcon="search">Rechercher</app-button>
         </div>
-      </div>
-
-      <div class="flex justify-center">
-        <app-button suffixIcon="search">Rechercher</app-button>
       </div>
     </template>
   </app-card>

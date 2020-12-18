@@ -1,17 +1,25 @@
 <template>
-  <div class='h-full relative'>
-    <the-navbar class='relative z-10'></the-navbar>
+  <div class="h-full relative">
+    <the-navbar class="relative z-10"></the-navbar>
 
-    <header class="relative px-4 pb-12 pt-24 md:pt-36 sm:px-16 lg:px-32 -mt-20 bg-gradient-to-b from-secondary-400 to-primary-500">
-      <h1 class="w-full lg:w-1/2 font-extrabold text-3xl md:text-5xl text-white">Adopter n'a jamais été aussi simple !</h1>
+    <header
+      class="relative px-4 pb-12 pt-24 md:pt-36 sm:px-16 lg:px-32 -mt-20 bg-gradient-to-b from-secondary-400 to-primary-500"
+    >
+      <h1
+        class="w-full lg:w-1/2 font-extrabold text-3xl md:text-5xl text-white"
+      >
+        Adopter n'a jamais été aussi simple !
+      </h1>
 
-      <p class='w-full lg:w-1/2 mt-4 sm:mt-8 text-lg text-white-60'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer fringilla augue hendrerit est congue pulvinar.
+      <p class="w-full lg:w-1/2 mt-4 sm:mt-8 text-lg text-white-60">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+        fringilla augue hendrerit est congue pulvinar.
       </p>
     </header>
 
-    <div class="text-primary-500 transform rotate-180 relative w-full -mt-1 -mb-20 sm:-mb-32 lg:-mb-48 -z-10">
+    <div
+      class="text-primary-500 transform rotate-180 relative -mt-1 -mb-20 sm:-mb-32 lg:-mb-48 -z-10"
+    >
       <app-wave></app-wave>
     </div>
 
@@ -21,7 +29,7 @@
       </div>
     </div>
 
-    <div class="h-200px"></div>
+    <div class="h-10"></div>
 
     <div class="w-full my-12">
       <roles-overview></roles-overview>
@@ -48,7 +56,7 @@ export default defineComponent({
     RolesOverview,
     SearchCard,
     TheNavbar,
-    AppWave
+    AppWave,
   },
   props: {},
 });
