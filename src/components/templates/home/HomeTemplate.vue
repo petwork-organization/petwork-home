@@ -36,7 +36,7 @@
     </div>
 
     <div class="w-full">
-      <opinion-overview></opinion-overview>
+      <opinions-overview></opinions-overview>
     </div>
   </div>
 </template>
@@ -45,14 +45,14 @@
 import { defineComponent } from 'vue';
 import AppWave from '../../atoms/wave/AppWave.vue';
 import TheNavbar from '../../organisms/navbar/TheNavbar.vue';
-import OpinionOverview from '../../organisms/opinion-overview/OpinionOverview.vue';
+import OpinionsOverview from '../../organisms/opinion-overview/OpinionsOverview.vue';
 import RolesOverview from '../../organisms/roles-overview/RolesOverview.vue';
 import SearchCard from '../../organisms/search-card/SearchCard.vue';
 
 export default defineComponent({
   name: 'HomeTemplate',
   components: {
-    OpinionOverview,
+    OpinionsOverview,
     RolesOverview,
     SearchCard,
     TheNavbar,
