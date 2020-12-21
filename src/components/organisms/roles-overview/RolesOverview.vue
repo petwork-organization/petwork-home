@@ -56,7 +56,7 @@ import {
   breedingOverviewItems,
   familyOverviewItems,
 } from './roles-overview.utils';
-import RolesOverviewCard from './RolesOverviewCard.vue';
+import RolesOverviewCard from '../../molecules/roles-overview-card/RolesOverviewCard.vue';
 import AppWave from '../../atoms/wave/AppWave.vue';
 
 export default defineComponent({

@@ -31,7 +31,7 @@ import { defineComponent } from 'vue';
 import AppCard from '../../molecules/card/AppCard.vue';
 import AppCarousel from '../../molecules/carousel/AppCarousel.vue';
 import AppWave from '../../atoms/wave/AppWave.vue';
-import OpinionsOverviewCard from './OpinionsOverviewCard.vue';
+import OpinionsOverviewCard from '../../molecules/opinion-overview-card/OpinionsOverviewCard.vue';
 
 export default defineComponent({
   name: 'opinions-overview',

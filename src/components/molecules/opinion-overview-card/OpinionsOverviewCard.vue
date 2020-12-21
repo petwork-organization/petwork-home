@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppCard from '../../molecules/card/AppCard.vue';
+import AppCard from '../card/AppCard.vue';
 
 export default defineComponent({
   props: {
