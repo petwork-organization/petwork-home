@@ -57,6 +57,12 @@ export default defineComponent({
             'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
           avatar: 'https://randomuser.me/api/portraits/women/46.jpg',
         },
+        {
+          title: 'Lorem ipsum i dolor sin amet.',
+          content:
+            'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+          avatar: 'https://randomuser.me/api/portraits/women/43.jpg',
+        },
       ],
     };
   },
