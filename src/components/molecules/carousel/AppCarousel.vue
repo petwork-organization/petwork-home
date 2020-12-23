@@ -1,5 +1,7 @@
 <template>
   <div
+    v-swipe:left="next"
+    v-swipe:right="previous"
     class="relative w-full flex flex-row items-center justify-center py-12 overflow-x-hidden"
   >
     <div :class="cardWidthClass" class="opacity-30 transform scale-90">
