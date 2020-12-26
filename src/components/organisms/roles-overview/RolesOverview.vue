@@ -20,8 +20,8 @@
       </div>
 
       <div class="text-white max-w-lg text-center font-light mt-6 sm:mt-12">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        fringilla augue hendrerit est congue pulvinar.
+        Trouver la solution idéale pour trouver l'animal qui vous correspond ou
+        partager votre élevage.
       </div>
     </div>
 
