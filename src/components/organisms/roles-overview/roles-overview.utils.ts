@@ -1,29 +1,35 @@
 export const breedingOverviewItems = [
   {
-    title: 'Breeding item 1',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: 'Je crée mon compte',
+    content:
+      'Je renseigne mes informations et définie mon mot de passe pour pouvoir accéder aux différentes fonctionnalités de Petwork.',
   },
   {
-    title: 'Breeding item 2',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: 'Je configure mon élevage',
+    content:
+      'Je donne des informations sur mon élevage, mes pratiques et mes animaux pour faire découvrir mes compagnons aux futures familles.',
   },
   {
-    title: 'Breeding item 3',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: 'Je reçois des demandes',
+    content:
+      "Les futures familles adoptives me posent des questions, souhaitent visiter l'élevage ou adopter un animal.",
   },
 ];
 
 export const familyOverviewItems = [
   {
-    title: 'Family item 1',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: "J'effectue mes recherches",
+    content:
+      "Je recherche l'élevage ou l'animal de mon choix parmi les éleveurs partenaires de Petwork pour une première prise de contact.",
   },
   {
-    title: 'Family item 2',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: 'Je demande des informations',
+    content:
+      "Je prends contact avec les élevages qui m'intéressent pour obtenir des informations sur l'adoption de mon futur compagnon.",
   },
   {
-    title: 'Family item 3',
-    content: 'Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet. Lorem ipsum i dolor sin amet.',
+    title: 'Je créée mon compte',
+    content:
+      "Si je le souhaite, je garde contact avec l'élevage pour lui donner des nouvelles de mon nouveau compagnon.",
   },
 ];
