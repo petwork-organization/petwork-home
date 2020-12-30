@@ -25,7 +25,7 @@ export const familyOverviewItems = [
   {
     title: 'Je demande des informations',
     content:
-      "Je prends contact avec les élevages qui m'intéresse pour obtenir des informations sur l'adoption de mon futur compagnon.",
+      "Je prends contact avec les élevages qui m'intéressent pour obtenir des informations sur l'adoption de mon futur compagnon.",
   },
   {
     title: 'Je créée mon compte',
