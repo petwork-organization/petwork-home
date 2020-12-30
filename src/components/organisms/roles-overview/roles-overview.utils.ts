@@ -1,8 +1,8 @@
 export const breedingOverviewItems = [
   {
-    title: 'Je créée mon compte',
+    title: 'Je crée mon compte',
     content:
-      'Je renseigne mes informations et définie mon mot de passe pour pouvoir avoir accès aux différentes fonctionnalités de Petwork.',
+      'Je renseigne mes informations et définie mon mot de passe pour pouvoir accéder aux différentes fonctionnalités de Petwork.',
   },
   {
     title: 'Je configure mon élevage',

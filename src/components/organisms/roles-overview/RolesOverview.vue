@@ -20,8 +20,8 @@
       </div>
 
       <div class="text-white max-w-lg text-center font-light mt-6 sm:mt-12">
-        Explorer la solution idéale pour trouver l'animal qui vous correspond ou
-        partager votre élevage.
+        Explorez la solution idéale pour trouver l'animal qui vous correspond ou
+        partagez votre élevage.
       </div>
     </div>
 
