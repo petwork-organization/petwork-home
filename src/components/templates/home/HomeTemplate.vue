@@ -8,12 +8,12 @@
       <h1
         class="w-full lg:w-1/2 font-extrabold text-3xl md:text-5xl text-white"
       >
-        Adopter n'a jamais été aussi simple !
+        Adopter un animal n'a jamais été aussi simple !
       </h1>
 
       <p class="w-full lg:w-1/2 mt-4 sm:mt-8 text-lg text-white-60">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        fringilla augue hendrerit est congue pulvinar.
+        Trouvez votre futur compagnon à l'aide d'éleveurs passionnés, gardez
+        contact et partagez ensemble des moments inoubliables !
       </p>
     </header>
 
